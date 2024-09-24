@@ -1,8 +1,8 @@
 // Importações principais do React e bibliotecas de navegação
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native"; // Contém a navegação completa do app
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"; // Cria a navegação com abas
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"; // Importa ícones da biblioteca Material Icons
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"; 
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 // Importação das telas que serão usadas nas abas de navegação
 import TaskScreen from "./screens/TaskScreen"; // Tela de tarefas
