@@ -1,53 +1,49 @@
-// Importações principais do React e bibliotecas de navegação
+
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native"; // Contém a navegação completa do app
+import { NavigationContainer } from "@react-navigation/native"; 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"; 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-// Importação das telas que serão usadas nas abas de navegação
-import TaskScreen from "./screens/TaskScreen"; // Tela de tarefas
-import MessageScreen from "./screens/MessageScreen"; // Tela de mensagens
-import LastTaskScreen from "./screens/LastTaskScreen"; // Tela de últimas tarefas
 
-// Criação do Tab Navigator (responsável por gerenciar as abas de navegação)
+import TaskScreen from "./screens/TaskScreen"; 
+import MessageScreen from "./screens/MessageScreen"; 
+import LastTaskScreen from "./screens/LastTaskScreen"; 
+
+
 const Tab = createBottomTabNavigator();
 
-// Função principal que retorna a navegação do app
 export default function App() {
   return (
-    // Define o contêiner principal para navegação
+
     <NavigationContainer>
-      {/* Cria a navegação de abas com as opções globais para as tabs */}
       <Tab.Navigator
         screenOptions={{
-          tabBarActiveTintColor: "tomato", // Cor dos ícones quando estão ativos
-          tabBarInactiveTintColor: "gray", // Cor dos ícones inativos
+          tabBarActiveTintColor: "tomato", 
+          tabBarInactiveTintColor: "gray", 
         }}
       >
-        {/* Define a primeira aba (Tarefas) */}
         <Tab.Screen
-          name="Tasks" // Nome da aba
-          component={TaskScreen} // Componente que será exibido ao clicar
+          name="Tasks" 
+          component={TaskScreen} 
           options={{
             tabBarIcon: ({ color, size }) => (
-              // Ícone da aba com base no estado (ativo/inativo)
+             
               <MaterialCommunityIcons
-                name="format-list-bulleted" // Nome do ícone específico
-                color={color} // Cor do ícone (definido pelo estado)
-                size={size} // Tamanho do ícone
+                name="format-list-bulleted" 
+                color={color} 
+                size={size} 
               />
             ),
           }}
         />
 
-        {/* Define a segunda aba (Mensagens) */}
         <Tab.Screen
-          name="Messages" // Nome da aba
-          component={MessageScreen} // Componente da tela
+          name="Messages" 
+          component={MessageScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
-                name="message-text" // Ícone para mensagens
+                name="message-text" 
                 color={color}
                 size={size}
               />
@@ -55,14 +51,14 @@ export default function App() {
           }}
         />
 
-        {/* Define a terceira aba (Últimas Tarefas) */}
+
         <Tab.Screen
-          name="Last Tasks" // Nome da aba
-          component={LastTaskScreen} // Componente da tela
+          name="Last Tasks" 
+          component={LastTaskScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
-                name="history" // Ícone para histórico/últimas tarefas
+                name="history" 
                 color={color}
                 size={size}
               />
